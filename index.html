@@ -1,0 +1,409 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="home.css" />
+    <script
+      src="https://kit.fontawesome.com/c4338603d0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" href="images/favicon.png" />
+    <script src="home.js"></script>
+    <script src="geolocation.js"></script>
+    <title>
+      Online Shopping Site for Mobiles, Fashion, Books, Electronics, Home
+      Appliances and More
+    </title>
+  </head>
+  <body>
+    <!--Navbar Section -->
+    <nav class="navbar navbar-light bg-Primary">
+      <div class="headerDiv">
+        <div class="name">
+          <i>Flipkart</i>
+        </div>
+        <div class="tagName">
+          <i>Explore Plus</i>
+          <i class="fa-solid fa-plus"></i>
+        </div>
+        <div class="searchDiv">
+          <input
+            id="searchbar"
+            placeholder="Search for products, brands and more"
+          />
+          <i class="fa fa-search checked"></i>
+        </div>
+        <div id="account">
+          <span class="loginName">Login</span>
+          <ul class="accountHoverDiv">
+            <li>
+              New Customer?
+              <span class="signUp"
+                ><i class="fa-solid fa-user-plus"></i><a href="signup.html">Signup</a></li>
+            <li>
+              <i class="fa fa-user-circle-o checked"></i
+              ><a href="login.html">My Profile</a>
+            </li>
+            <li><i class="fa fa-bolt checked"></i> SuperCoin Zone</li>
+            <li><i class="fa fa-shopping-bag checked"></i> Orders</li>
+            <li><i class="fa fa-heart checked"></i> Wishlist</li>
+            <li><i class="fa fa-comment checked"></i> My Chats</li>
+            <li><i class="fa fa-ticket checked"></i> Coupons</li>
+            <li><i class="fa fa-drivers-license checked"></i> Gift Cards</li>
+            <li><i class="fa fa-power-off checked"></i> Logout</li>
+          </ul>
+        </div>
+        <div id="more">
+          <span>More <i class="fa fa-angle-down"></i></span>
+          <ul class="moreHoverDiv list">
+            <li><i class="fa fa-bell-o checked"></i> Notifications</li>
+            <li><i class="fa fa-briefcase checked"></i>Sell on Flipkart</li>
+            <li>
+              <i class="fa fa-headphones checked"></i>24 x 7 Customer Care
+            </li>
+            <li><i class="fa fa-line-chart checked"></i>Advertise</li>
+            <li><i class="fa fa-download checked"></i>Download App</li>
+          </ul>
+        </div>
+        <div id="cart">
+          <i class="fa fa-shopping-cart"></i>
+          <span>Cart</span>
+        </div>
+        <div>
+          <button class="mode" onClick="changeMode()">Mode</button>
+        </div>
+      </div>
+    </nav>
+    <!-- category-section -->
+    <div id="category">
+      <div class="quickSearch">
+        <div class="quickDiv">
+          <img src="images/hp1.png" alt="Top Offers">
+          <ul>
+            <li style="margin-left: 2%;" class="menu">Offers</li>
+        </ul>
+        </div>
+        <div class="quickdiv">
+          <img src="images/hp2.png" alt="grocery" />
+          <ul>
+              <li class="menu">Groceries</li>
+          </ul>
+        </div>
+        <div class="quickdiv">
+          <img src="images/hp3.png" alt="mobiles" />
+          <ul>
+            <li class="menu">mobiles</li>
+          </ul>
+        </div>
+        <div id="fashion">
+          <div class="quickdiv">
+            <img src="images/hp4.png" alt="fashions" />
+            <ul>
+              <li class="menu">fashions</li>
+            </ul>
+          </div>
+        </div>
+        <div class="quickdiv">
+          <img src="images/hp5.png" alt="Electronics" />
+          <ul>
+            <li class="menu">Electronics</li>
+          </ul>
+        </div>
+        <div class="quickdiv">
+          <img src="images/hp6.png" alt="Furniture" />
+          <ul>
+            <li class="menu">Furniture</li>
+          </ul>
+        </div>
+        <div class="quickdiv">
+          <img src="images/hp7.png" alt="HA Products" />
+          <ul>
+            <li class="menu">Appliances</li>
+          </ul>
+        </div>
+        <div class="quickdiv">
+          <img src="images/hp8.png" alt="Travel" />
+          <ul>
+            <i class="menu">Travel</li>
+           </ul>
+        </div>
+        <div class="quickdiv">
+          <img src="images/hp9.png" alt="Beauty, Toys & More" />
+          <ul>
+            <li class="menu">Beauty,Toys</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coupons -->
+    <div id="coupon" class="coupon">
+      <img src="images/coupon2.png" alt="coupon" />
+      <span onclick="closeCoupon()" class="close-coupon">x</span>
+  </div>
+    <!-- banner section -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/banner2.jpg" class="d-block w-100" alt="Realme 8">
+        </div>
+        <div class="carousel-item">
+          <img src="images/banner3.jpg" class="d-block w-100" alt="Motorola">
+        </div>
+        <div class="carousel-item">
+          <img src="images/banner4.jpg" class="d-block w-100" alt="Electronics">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- Deals of the days -->
+    <div class="collection">
+      <div class="container-fluid py-2">
+        <div class="shadow">
+          <h3 class="font-weight-light">
+            <span class="text-info">Deals of the days</span>
+            <button type="button" class="btn btn-outline-primary mybtn">View All</button>
+          </h3>
+          <hr>
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="card shadow">
+              <img src="images/m1.jpg" class="img-fluid mb-3" alt="">
+              <input type="button" value="Add to Cart">
+              <h5>T-Shirt</h5>
+              <p><small><del>$24.99</del><span>$12.99</span></small></p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card shadow">
+              <img src="images/h4.jpg" class="img-fluid mb-3" alt="Headphones">
+              <input type="button" value="Add to Cart">
+              <h5>Headphones</h5>
+              <p><small><del>$35.99</del><span>$19.99</span></small></p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card shadow">
+              <img src="images/m3.jpeg" class="img-fluid mb-3" alt="Sun Glass">
+              <input type="button" value="Add to Cart">
+              <h5>Sun Glass</h5>
+              <p><small><del>$15.99</del><span>$10.99</span></small></p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card shadow">
+              <img src="images/m6.jpeg" class="img-fluid mb-3" alt="Watch">
+              <input type="button" value="Add to Cart">
+              <h5>Watch</h5>
+              <p><small><del>$129.99</del><span>$99.99</span></small></p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card shadow">
+              <img src="images/f5.jpg" class="img-fluid mb-3" alt="Couch">
+              <input type="button" value="Add to Cart">
+              <h5>Couch</h5>
+              <p><small><del>$300.99</del><span>$250.99</span></small></p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card shadow">
+              <img src="images/c5.jpg" class="img-fluid mb-3" alt="">
+              <input type="button" value="Add to Cart">
+              <h5>Pants</h5>
+              <p><small><del>$20.99</del><span>$15.99</span></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile section -->
+    <div class="collection">
+      <div class="container-fluid py-2">
+        <div class="shadow">
+          <h3 class="font-weight-light">
+            <span class="text-Primary">Mobiles</span>
+            <button type="button" class="btn btn-outline-primary mybtn">View All</button>
+          </h3>
+          <hr>
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="card shadow">
+              <img src="images/download.jpg" class="img-fluid mb-3" alt="Realme">
+              <input type="button" value="Add to Cart">
+              <h5>Realme-XT</h5>
+              <p><small><del>$249.99</del><span>$199.99</span></small></p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card shadow">
+              <img src="images/p7.jpg" class="img-fluid mb-3" alt="Samsung">
+              <input type="button" value="Add to Cart">
+              <h5>Samsung M53</h5>
+              <p><small><del>$229.99</del><span>$189.99</span></small></p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card shadow">
+              <img src="images/p4.jpg" class="img-fluid mb-3" alt="Samsung">
+              <input type="button" value="Add to Cart">
+              <h5>Samsung M33</h5>
+              <p><small><del>$269.99</del><span>$230.99</span></small></p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card shadow">
+              <img src="images/p3.jpg" class="img-fluid mb-3" alt="OPPO">
+              <input type="button" value="Add to Cart">
+              <h5>OPPO A74</h5>
+              <p><small><del>$189.99</del><span>$179.99</span></small></p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card shadow">
+              <img src="images/p5.jpg" class="img-fluid mb-3" alt="OPPO">
+              <input type="button" value="Add to Cart">
+              <h5>OPPO f21</h5>
+              <p><small><del>$300.99</del><span>$250.99</span></small></p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card shadow">
+              <img src="images/p2.jpg" class="img-fluid mb-3" alt="I-Phone">
+              <input type="button" value="Add to Cart">
+              <h5>I-Phone</h5>
+              <p><small><del>$211.99</del><span>$189.99</span></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- headphones and speaker section -->
+    <div class="collection">
+      <div class="container-fluid py-2">
+        <div class="shadow">
+          <h3 class="font-weight-light">
+            <span class="text-info">Headphones</span>
+            <button type="button" class="btn btn-outline-primary mybtn">View All</button>
+          </h3>
+          <hr>
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="card shadow">
+              <img src="images/h1.jpg" class="img-fluid mb-3" alt="Headphones">
+              <input type="button" value="Add to Cart">
+              <h5>Headphones</h5>
+              <p><small><del>$24.99</del><span>$12.99</span></small></p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card shadow">
+              <img src="images/h4.jpg" class="img-fluid mb-3" alt="Headphones">
+              <input type="button" value="Add to Cart">
+              <h5>Headphones</h5>
+              <p><small><del>$35.99</del><span>$19.99</span></small></p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card shadow">
+              <img src="images/h2.jpg" class="img-fluid mb-3" alt="Headphones">
+              <input type="button" value="Add to Cart">
+              <h5>Headphones</h5>
+              <p><small><del>$15.99</del><span>$10.99</span></small></p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card shadow">
+              <img src="images/h3.jpg" class="img-fluid mb-3" alt="Headphones">
+              <input type="button" value="Add to Cart">
+              <h5>Headphones</h5>
+              <p><small><del>$129.99</del><span>$99.99</span></small></p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card shadow">
+              <img src="images/h5.jpg" class="img-fluid mb-3" alt="Headphones">
+              <input type="button" value="Add to Cart">
+              <h5>Headphones</h5>
+              <p><small><del>$300.99</del><span>$250.99</span></small></p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card shadow">
+              <img src="images/h6.jpg" class="img-fluid mb-3" alt="Headphones">
+              <input type="button" value="Add to Cart">
+              <h5>Headphones</h5>
+              <p><small><del>$20.99</del><span>$15.99</span></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+      <div
+        class="container-fluid text-center bg-info py-5">
+        <div class="py-5">
+          <h2 class="text-light">Interested in working with me?</h2>
+          <button class="btn btn-outline-light btn-lg">Let's talk</button>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <h5 class="text-info pb-3">More Links</h5>
+            <a href="#" class="text-light d-block">Home</a>
+            <a href="#" class="text-light d-block">About-Us</a>
+            <a href="#" class="text-light d-block">Contact-me</a>
+            <a href="#" class="text-light d-block"
+              >Write a recommendation <i class="fas fa-heart text-light"></i>
+            </a>
+          </div>
+          <div class="col-12 col-md-4 text-light text-justify py-3">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis
+              aspernatur, harum sed quos eveniet laboriosam incidunt? In vitae
+              ea odit exercitationem aliquam, autem molestiae aspernatur atque
+              adipisci dolorum beatae sapiente officiis reiciendis quaerat
+              itaque maxime fugit dolore fugiat, nulla molestias maiores
+              laborum. Amet ipsum dolor ad nulla iste repellendus beatae.
+            </p>
+          </div>
+          <div class="col-12 col-md-4">
+            <h5 class="text-info pb-3">Useful links</h5>
+            <a href="#" class="text-light d-block">Your Account</a>
+            <a href="#" class="text-light d-block">Become An Affliates</a>
+            <a href="#" class="text-light d-block">Shipping Rates</a>
+            <a href="#" class="text-light d-block">help</a>
+          </div>
+        </div>
+        <div class="text-muted py-3">
+          <p>Copyright © Praveen Singh 2021</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      window.onload = loadCoupon();
+      window.onload = geolocation();
+    </script>
+  </body>
+</html>
